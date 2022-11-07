@@ -21,7 +21,7 @@ function Auth () {
   };
 
   const fetchLogin = async (email, password) => {
-    return fetch('http://localhost:3000/auth/login', {
+    return fetch('https://dws-nest-notes-app-production.up.railway.app/auth/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

@@ -1,4 +1,4 @@
-const host = 'http://localhost:3000';
+const host = 'https://dws-nest-notes-app-production.up.railway.app';
 
 const hadersCreator = (method = undefined, token, body = undefined) => {
   const ans = {
