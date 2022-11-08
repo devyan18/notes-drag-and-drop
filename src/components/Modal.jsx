@@ -1,5 +1,5 @@
-import Button from 'react-bootstrap/Button';
-import { Modal as BtsModal } from 'react-bootstrap';
+import Button from 'react-bootstrap/Button'
+import { Modal as BtsModal } from 'react-bootstrap'
 
 export default function Modal ({
   title,
@@ -28,5 +28,5 @@ export default function Modal ({
           <Button variant="success" onClick={onAccept}>Accept</Button>
         </BtsModal.Footer>
       </BtsModal>
-  );
+  )
 }

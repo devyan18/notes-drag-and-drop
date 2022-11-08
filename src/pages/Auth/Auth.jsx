@@ -1,24 +1,24 @@
-import { useState } from 'react';
-import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
-import { SetSession } from '../../providers/SessionProvider';
-import Container from 'react-bootstrap/Container';
+import { SetSession } from '../../providers/SessionProvider'
+import { useState } from 'react'
+import Container from 'react-bootstrap/Container'
+import Button from 'react-bootstrap/Button'
+import Form from 'react-bootstrap/Form'
 
 function Auth () {
-  const changeSession = SetSession();
+  const changeSession = SetSession()
 
   const [form, setForm] = useState({
     email: '',
     password: ''
-  });
+  })
 
   const handleSetValues = (e) => {
-    const { name, value } = e.target;
+    const { name, value } = e.target
     setForm({
       ...form,
       [name]: value
-    });
-  };
+    })
+  }
 
   const fetchLogin = async (email, password) => {
     return fetch('https://dws-nest-notes-app-production.up.railway.app/auth/login', {
@@ -30,18 +30,18 @@ function Auth () {
         email,
         password
       })
-    });
-  };
+    })
+  }
 
   const handleSubmit = (e) => {
-    e.preventDefault();
+    e.preventDefault()
     fetchLogin(form.email, form.password)
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
-        changeSession(data.Authorization);
-      });
-  };
+        console.log(data)
+        changeSession(data.Authorization)
+      })
+  }
 
   return (
 		<Container className='p-3' style={{ width: '50%' }} align="center">
@@ -79,7 +79,7 @@ function Auth () {
 				</Button>
 			</Form>
 		</Container>
-  );
+  )
 }
 
-export default Auth;
+export default Auth

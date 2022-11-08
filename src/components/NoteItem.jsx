@@ -1,7 +1,7 @@
-import { useSortable } from '@dnd-kit/sortable';
-import { CSS } from '@dnd-kit/utilities';
-import Card from 'react-bootstrap/Card';
-import Button from 'react-bootstrap/Button';
+import { useSortable } from '@dnd-kit/sortable'
+import { CSS } from '@dnd-kit/utilities'
+import Card from 'react-bootstrap/Card'
+import Button from 'react-bootstrap/Button'
 
 export default function NoteItem (props) {
   const {
@@ -10,12 +10,12 @@ export default function NoteItem (props) {
     setNodeRef,
     transform,
     transition
-  } = useSortable({ id: props.id });
+  } = useSortable({ id: props.id })
 
   const style = {
     transform: CSS.Transform.toString(transform),
     transition
-  };
+  }
 
   return (
     <div ref={setNodeRef} style={style} {...attributes} >
@@ -28,12 +28,12 @@ export default function NoteItem (props) {
           size='sm'
           type='button'
           onClick={(e) => {
-            e.stopPropagation();
-            e.preventDefault();
-            props.onDeleteNote(props.id._id);
+            e.stopPropagation()
+            e.preventDefault()
+            props.onDeleteNote(props.id._id)
           }}
         >Delete</Button>
       </Card>
     </div>
-  );
+  )
 }

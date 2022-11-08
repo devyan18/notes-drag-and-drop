@@ -22,6 +22,6 @@ module.exports = {
     'react/prop-types': 'off',
     'no-tabs': 'off',
     'no-mixed-spaces-and-tabs': 'off',
-    semi: ['error', 'always']
+    semi: ['error', 'never']
   }
-};
+}
